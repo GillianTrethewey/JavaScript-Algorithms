@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+/*
+Encapsulation:
+- defined as binding the data and methods into a single unit to protect it from outside access
+- to access the private property, use a getter/setter type of method
+- ** bind the private property password with a public method setPassword() **
+
+Inheritance:
+- parent class is extended to the child class
+- or superclass is extended to the subclass
+- purpose is readability and reliability
+- if parent is changed, children are also changed by default
+*/
+
+class User {
+  #password; // private properties must be declared before use
+  constructor(email, password) {
+    this.email = email;
+    this.#password = password;
+  }
+
+  checkCreds(email, password) {
+    if (email === this.email && password === this.#password) {
+      console.log('Success!');
+    } else {
+      console.log('Try again!');
+    }
+  }
+
+  resetPassword(newPassword) { //a setter to change the private
+    this.#password = newPassword;
+  }
+
+  logout() {
+    console.log('Logout Successfully');
+  }
+}
+
+class Author extends User {
+  #numOfPost; // private properties must be declared before use
+
+  constructor(email, password) {
+    super(email, password);
+    this.#numOfPost = 0;
+  }
+
+  createPost(content) {
+    // add content to your DB. :)
+    this.#numOfPost++;
+  }
+
+  getNumOfPost() {
+    return this.#numOfPost;
+  }
+}
+
+class Admin extends User {
+  constructor(email, password) {
+    super(email, password);
+  }
+
+  removeUser(userId) {
+    // remove this userId from your DB.
+    console.log('User Removed successfully.');
+  }
+}
+
+const gillian = new Author('gl@gmail.com', 'secretpass');
+gillian.checkCreds('gl@gmail.com', 'secretpass');
+gillian.createPost('I hope you are enjoying this article. Don\'t forget to leave your feedback.');
+gillian.createPost('I am tired, Do you wanna buy me a coffee?');
+console.log(gillian.getNumOfPost()); // 2
+
+const lyle = new Admin('lyle@gmail.com', '[Object] [object]');
+lyle.checkCreds('lyle@gmail.com', '[Object] [object]');
+lyle.resetPassword('{id: 1}');
+lyle.checkCreds('lyle@gmail.com', '{id: 1}');
+lyle.removeUser(12);
+
+
+
+
+
+</script>
