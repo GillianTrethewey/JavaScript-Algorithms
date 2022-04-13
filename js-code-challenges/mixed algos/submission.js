@@ -40,6 +40,22 @@ const largestPair = function(array) {
     return max;
 };
 
+/* alternative solution */
+
+function largestProduct(arr) {
+    let product = 0;
+    let temp = 0;
+    for (let i = 0; i < arr.length-1; i++) {
+            temp = arr[i] * arr[i+1];
+            product = (temp > product) ? temp: product;
+
+    }
+    console.log(product);
+    return product;
+}
+
+largestProduct([5, 1, 2, 3, 1, 4]);
+
 const removeParenth = function(str) {
     // your code here - don't forget to return a string!
     let arr = str.split('');
