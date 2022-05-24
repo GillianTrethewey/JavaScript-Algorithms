@@ -18,4 +18,4 @@ function addArrayProperty(obj, key, arr) {
 }
 
 addArrayProperty(myObj, 'myProperty', myArray);
-console.log(myObj.myPro
+console.log(myObj.myProperty);
