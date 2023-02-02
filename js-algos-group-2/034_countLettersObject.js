@@ -1,6 +1,7 @@
 function countLetters(str) {
   // Create the object which will store the occurrences
-  let count = {}; // key: value pairs, or key: count[key], or key: count.key
+  let count = {}; 
+  // key: value pairs, or key: count[key], or key: count.key
 /* letter: count[letter] key:value pair ... 
   l: undefined, y:undefined, l: undefined, e:undefined
   if l[0] is undefined, then make it 1, otherwise increase it by 1
