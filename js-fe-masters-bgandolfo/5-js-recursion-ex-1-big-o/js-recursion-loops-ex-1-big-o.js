@@ -9,7 +9,6 @@ const loopNTimes = (n) => {
 
 console.log(loopNTimes(3));
 
-
 /*----------------------------------------------*/
 let tracker = 0;
 const callMe = (arg) => {
@@ -28,6 +27,4 @@ console.log(callMe());
 2. Identify recursive case(s).
 3. Return where appropriate.
 4. Write procedures for each each that bring you closer to the base case(s)
-
-
 */
